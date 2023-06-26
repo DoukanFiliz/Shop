@@ -16,5 +16,5 @@ export class ProductComponent {
     {id: 4, name: "Music", price: 16, categoryId: 4, description: "Spotify Account", imageUrl:"https://play-lh.googleusercontent.com/WB0j9PZGUofgwNbJ8Jm0-v03FIwBMj5Ovi5eso8xaBVTh6FGOyc4xyNjwMkTziKgkBs"},
     {id: 5, name: "Drink", price: 26, categoryId: 5, description: "Red Bull", imageUrl:"https://images.migrosone.com/sanalmarket/product/08110030/08110030-a4b666-1650x1650.png"}
   ];
-  deger: boolean = true;
+  deger: number = this.products.length;
 }
