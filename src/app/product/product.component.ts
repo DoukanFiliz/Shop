@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Product } from './product';
+declare let alertify: any;
 
 @Component({
   selector: 'app-product',
@@ -67,7 +68,7 @@ export class ProductComponent {
   ];
   deger: number = this.products.length;
 
-  addToCart(Product: { name: string; }) {
-    alert(`Sepete Eklendi : ${Product.name}`);
+  addToCart(Product: { name: string }) {
+    alertify.success(`${ Product.name } sepete eklendi!`);
   }
 }
