@@ -6,11 +6,11 @@ import { Product } from './product';
 })
 export class ProductFilterPipe implements PipeTransform {
   transform(value: Product[], filterText?: string): Product[] {
-    filterText = filterText ? filterText.toLocaleLowerCase(): undefined
-    return filterText
-      ? value.filter(
-          (p: Product) => p.name.toLocaleLowerCase()
-        )
-      : value;
+    if (!filterText) {
+      return value;
+    }
+    return value.filter((p: Product) =>
+      p.name.toLocaleLowerCase().includes(filterText.toLocaleLowerCase())
+    );
   }
 }

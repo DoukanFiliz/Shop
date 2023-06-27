@@ -1,12 +1,8 @@
 <h3 *ngIf="deger; else noProduct">{{ title }}</h3>
 <div class="mb-3">
-  <input
-    class="form-control"
-    id="productName"
-    placeholder="Ürün Ara"
-  />
-  <div id="emailHelp" class="form-text">
-    We'll never share your email with anyone else.
+  <input class="form-control" id="productName" placeholder="Ürün Ara" [(ngModel)] = "filterText"/>
+  <div *ngIf="filterText" id="emailHelp" class="form-text">
+    Şu an <strong>{{ filterText }}</strong> aradınız
   </div>
 </div>
 <div class="row">
@@ -15,7 +11,11 @@
       Bu kategoride ürün yoktur.
     </div>
   </ng-template>
-  <div *ngFor="let product of products" class="card" style="width: 18rem">
+  <div
+    *ngFor="let product of products | productFilter: filterText"
+    class="card"
+    style="width: 18rem"
+  >
     <img src="{{ product.imageUrl }}" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">

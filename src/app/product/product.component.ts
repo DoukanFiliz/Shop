@@ -8,6 +8,7 @@ import { Product } from './product';
 })
 export class ProductComponent {
   title = 'Ürün Listesi';
+  filterText = '';
   products: Product[] = [
     {id: 1, name: "Laptop", price: 25000, categoryId: 2, description: "Lenovo Ideapad", imageUrl:"https://resim.epey.com/131751/m_lenovo-ideapad-330-81de0054tx-8.png"},
     {id: 2, name: "Mouse", price: 2500, categoryId: 1, description: "Microsoft Modern Mobile Pastel Blue", imageUrl:"https://m.media-amazon.com/images/I/619T8JcKnmL._AC_UF1000,1000_QL80_.jpg"},
